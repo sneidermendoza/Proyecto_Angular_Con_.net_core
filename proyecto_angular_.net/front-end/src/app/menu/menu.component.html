@@ -1,8 +1,27 @@
 <mat-toolbar color="warn">
     <span>
-        <a mat-button>
+        <a routerLink="" mat-button>
             <mat-icon>theaters</mat-icon>
             <h1><b>Peliculas SMS</b></h1>  
         </a>
     </span>
+    <div>
+        <a mat-button routerLink="peliculas/buscar">
+            <mat-icon>search</mat-icon>
+            Buscar peliculas
+        </a>
+        
+    </div>
+    <div>
+        <a mat-button routerLink="generos">Generos</a>
+    </div>
+    <div>
+        <a mat-button routerLink="actores">Actores</a>
+    </div>
+    <div>
+        <a mat-button routerLink="cines">Cines</a>
+    </div>
+    <div>
+        <a mat-button routerLink="peliculas/crear">Crear pelicula</a>
+    </div>
 </mat-toolbar>
