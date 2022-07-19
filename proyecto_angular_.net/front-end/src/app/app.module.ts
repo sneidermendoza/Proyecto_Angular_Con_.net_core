@@ -33,6 +33,7 @@ import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine
 import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component';
 import { SelectorMultipeComponent } from './utilidades/selector-multipe/selector-multipe.component';
+import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 
 
 
@@ -63,7 +64,8 @@ import { SelectorMultipeComponent } from './utilidades/selector-multipe/selector
     FormularioCineComponent,
     MapaComponent,
     FormularioPeliculaComponent,
-    SelectorMultipeComponent
+    SelectorMultipeComponent,
+    AutocompleteActoresComponent
 
   ],
   imports: [
