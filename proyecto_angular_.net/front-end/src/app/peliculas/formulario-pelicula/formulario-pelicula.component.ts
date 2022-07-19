@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { peliculaCreacionDTO } from '../pelicula';
+import { peliculaCreacionDTO, peliculaDTO } from '../pelicula';
 
 @Component({
   selector: 'app-formulario-pelicula',
@@ -12,6 +12,9 @@ export class FormularioPeliculaComponent implements OnInit {
   constructor(private formbuilder: FormBuilder) { }
 
   form : FormGroup
+
+  @Input()
+  modelo: peliculaDTO
 
   @Output()
   onSubmit: EventEmitter<peliculaCreacionDTO> = new EventEmitter<peliculaCreacionDTO>();
@@ -27,7 +30,11 @@ export class FormularioPeliculaComponent implements OnInit {
       trailer: '',
       fechaLanzamiento: '',
       poster: ''
-    })
+    });
+
+    if (this.modelo !== undefined) {
+      this.form.patchValue(this.modelo);
+    }
   }
 
   archivoSeleccionado(archivo: File){

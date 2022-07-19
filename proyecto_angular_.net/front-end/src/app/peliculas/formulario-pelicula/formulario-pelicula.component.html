@@ -24,11 +24,15 @@
 
     <h4>Seleccione poster</h4>
 
-    <app-input-img (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
+    <app-input-img 
+    [urlImagenActual]="modelo?.poster"
+    (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
 
     <h4>Resumen de la Pelicula</h4>
 
-    <app-input-markdown (changeMarkdown)="changeMarkdown($event)" 
+    <app-input-markdown 
+    [contenidoMarkdown]="modelo?.resumen"
+    (changeMarkdown)="changeMarkdown($event)" 
     [placeHolderTexarea]="'Resumen'"></app-input-markdown>
 
     <div>
