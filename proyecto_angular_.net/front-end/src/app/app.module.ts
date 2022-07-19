@@ -32,6 +32,7 @@ import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdo
 import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
 import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component';
+import { SelectorMultipeComponent } from './utilidades/selector-multipe/selector-multipe.component';
 
 
 
@@ -61,7 +62,8 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
     InputMarkdownComponent,
     FormularioCineComponent,
     MapaComponent,
-    FormularioPeliculaComponent
+    FormularioPeliculaComponent,
+    SelectorMultipeComponent
 
   ],
   imports: [

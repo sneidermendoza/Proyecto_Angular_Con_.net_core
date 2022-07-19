@@ -35,6 +35,18 @@
     (changeMarkdown)="changeMarkdown($event)" 
     [placeHolderTexarea]="'Resumen'"></app-input-markdown>
 
+    <h4>Seleccione los generos</h4>
+
+    <app-selector-multipe 
+    [Seleccionados]="generosSeleccionados"
+    [NoSeleccionados]="generosNoSeleccionados"></app-selector-multipe>
+
+    <h4>Seleccione los cines</h4>
+
+    <app-selector-multipe 
+    [Seleccionados]="cinesSeleccionados"
+    [NoSeleccionados]="cinesNoSeleccionados"></app-selector-multipe>
+
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">
             Guardar cambios
