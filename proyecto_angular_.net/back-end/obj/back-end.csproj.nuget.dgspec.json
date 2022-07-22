@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Desarrollador\\Desktop\\Semillero_Ludycom\\proyecto_angular_.net\\back-end\\back-end.csproj": {}
+    "C:\\Users\\Semillero\\Desktop\\Semillero-N\\Proyecto_Angular_Con_.net_core\\proyecto_angular_.net\\back-end\\back-end.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Desarrollador\\Desktop\\Semillero_Ludycom\\proyecto_angular_.net\\back-end\\back-end.csproj": {
+    "C:\\Users\\Semillero\\Desktop\\Semillero-N\\Proyecto_Angular_Con_.net_core\\proyecto_angular_.net\\back-end\\back-end.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Desarrollador\\Desktop\\Semillero_Ludycom\\proyecto_angular_.net\\back-end\\back-end.csproj",
+        "projectUniqueName": "C:\\Users\\Semillero\\Desktop\\Semillero-N\\Proyecto_Angular_Con_.net_core\\proyecto_angular_.net\\back-end\\back-end.csproj",
         "projectName": "back-end",
-        "projectPath": "C:\\Users\\Desarrollador\\Desktop\\Semillero_Ludycom\\proyecto_angular_.net\\back-end\\back-end.csproj",
-        "packagesPath": "C:\\Users\\Desarrollador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Desarrollador\\Desktop\\Semillero_Ludycom\\proyecto_angular_.net\\back-end\\obj\\",
+        "projectPath": "C:\\Users\\Semillero\\Desktop\\Semillero-N\\Proyecto_Angular_Con_.net_core\\proyecto_angular_.net\\back-end\\back-end.csproj",
+        "packagesPath": "C:\\Users\\Semillero\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Semillero\\Desktop\\Semillero-N\\Proyecto_Angular_Con_.net_core\\proyecto_angular_.net\\back-end\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Desarrollador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Semillero\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
