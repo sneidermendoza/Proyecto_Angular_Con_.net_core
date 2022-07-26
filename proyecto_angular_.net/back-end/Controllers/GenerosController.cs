@@ -1,7 +1,12 @@
-﻿using back_end.Entidades;
-using back_end.Repositorios;
+﻿using AutoMapper;
+using back_end.DTOs;
+using back_end.Entidades;
+using back_end.Filtros;
+using back_end.utilidades;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,57 +15,58 @@ using System.Threading.Tasks;
 namespace back_end.Controllers
 {
     [Route("api/generos")]
+    [ApiController]
     public class GenerosController : ControllerBase
     {
-        private readonly IRepositorio repositorio;
 
-        public GenerosController(IRepositorio repositorio)
+        private readonly ILogger<GenerosController> logger;
+        private readonly ApplicationDbContext context;
+        private readonly IMapper mapper;
+
+        public GenerosController(
+            ILogger<GenerosController> logger,
+            ApplicationDbContext context,
+            IMapper mapper)
         {
-            this.repositorio = repositorio;
+            this.logger = logger;
+            this.context = context;
+            this.mapper = mapper;
         }
 
         [HttpGet] //api/generos
-        [HttpGet("listado")] //api/generos/listado
-        [HttpGet("/listadogeneros")] // /listadogeneros
-        public ActionResult<List<Genero>> Get()
+        public async Task<ActionResult<List<GeneroDTO>>> Get([FromQuery] PaginacionDTO paginacionDTO)
         {
-            return repositorio.obtenerTodosLosGeneros();
+            var queryable = context.Generos.AsQueryable();
+            await HttpContext.InsertarParametrosPaginacionEncabecera(queryable);
+            var generos = await queryable.OrderBy(x => x.Nombre).Paginar(paginacionDTO).ToListAsync();
+            return mapper.Map<List<GeneroDTO>>(generos);
         }
 
-        [HttpGet("{id:int}")] //api/genero/id
-        public async Task<ActionResult<Genero>> Get(int id, [FromHeader] string nombre)
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<Genero>> Get(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var genero = await repositorio.ObtenerPorId(id);
-
-            if (genero == null)
-            {
-                return NotFound();
-            }
-
-            return genero;
+            throw new NotImplementedException();
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Genero genero)
+        public async Task<ActionResult> Post([FromBody] GeneroCreacionDTO generoCreacionDTO)
         {
+            var genero = mapper.Map<Genero>(generoCreacionDTO);
+            context.Add(genero);
+            await context.SaveChangesAsync();
             return NoContent();
         }
 
         [HttpPut]
         public ActionResult Put([FromBody] Genero genero)
         {
-            return NoContent();
+            throw new NotImplementedException();
         }
 
         [HttpDelete]
         public ActionResult Delete()
         {
-            return NoContent();
+            throw new NotImplementedException();
         }
     }
 }
